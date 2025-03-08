@@ -37,4 +37,9 @@ public class RedirectController {
         log.info("POST: Response Shortening URL " + shortner.shorten());
         return ResponseEntity.status(HttpStatus.CREATED).body(new UrlResponse(shortner.shorten()));
     }
+
+    @GetMapping("/ping")
+    public ResponseEntity<String> ping(){
+        return ResponseEntity.status(HttpStatus.OK).body("Pong");
+    }
 }
