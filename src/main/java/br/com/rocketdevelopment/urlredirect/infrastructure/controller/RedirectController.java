@@ -37,4 +37,12 @@ public class RedirectController {
         log.info("POST: Response Shortening URL " + shortner.shorten());
         return ResponseEntity.status(HttpStatus.CREATED).body(new UrlResponse(shortner.shorten()));
     }
+
+    /*
+       Request Get helf-check
+     */
+    @GetMapping("/ping")
+    public ResponseEntity<String> pong(){
+        return ResponseEntity.status(HttpStatus.OK).body("pong");
+    }
 }
